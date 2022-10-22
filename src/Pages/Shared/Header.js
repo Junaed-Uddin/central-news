@@ -26,11 +26,7 @@ const Header = () => {
                 <Navbar.Brand className='fs-3'><Link to='/' style={{ textDecoration: 'none' }}>Central <span className='text-black'>Media</span></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#features" className='text-start'>Features</Nav.Link>
-                        <Nav.Link href="#pricing" className='text-start mb-2 mb-lg-0'>Pricing</Nav.Link>
-                    </Nav>
-                    <Nav>
+                    <Nav className="ms-auto">
                         {
                             user?.uid?
                                 <>

@@ -4,18 +4,21 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FaGoogle, FaGithub, FaFacebook, FaYoutube, FaTwitter, FaWhatsapp, FaDiscord } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import CarouselItem from './CarouselItem';
 
 const RightSideNav = () => {
     const googleProvider = new GoogleAuthProvider();
     const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleGoogleSignIn = () => {
         createUser(googleProvider)
             .then(res => {
                 const user = res.user;
                 console.log(user);
+                navigate('/');
             })
             .catch(err => console.error(err));
     }

@@ -17,24 +17,24 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/home')
+                loader: () => fetch('https://central-media-server.vercel.app/home')
             },
             {
                 path: 'home',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/home')
+                loader: () => fetch('https://central-media-server.vercel.app/home')
             },
             {
                 path: '/category/:id',
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/category/${params.id}`)
+                    return fetch(`https://central-media-server.vercel.app/category/${params.id}`)
                 },
                 element: <Categories></Categories>
             },
             {
                 path: '/news/:id',
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/news/${params.id}`)
+                    return fetch(`https://central-media-server.vercel.app/news/${params.id}`)
                 },
                 element: <PrivateRoute><News></News></PrivateRoute>
             },
